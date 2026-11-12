@@ -234,19 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     const resumeButtons = document.querySelectorAll('a[href="resume.pdf"]');
     resumeButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            fetch('resume.pdf', { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        showToast("Downloading Akanksha's resume...");
-                    } else {
-                        e.preventDefault();
-                        showToast("Tip: Put your 'resume.pdf' in the website folder or link your Google Drive!");
-                    }
-                })
-                .catch(() => {
-                    // Direct browser download
-                });
+        btn.addEventListener('click', () => {
+            showToast("Downloading Akanksha Maurya's resume...");
         });
     });
 
