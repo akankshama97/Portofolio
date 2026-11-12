@@ -441,19 +441,39 @@
                     <p class="section-subtext">Click on any live demo to test the live deployed applications directly.</p>
                 </div>
 
+                <!-- Interactive Category Filter -->
+                <div class="project-filter-bar">
+                    <button class="filter-pill active" data-filter="all">
+                        <span>All Projects</span>
+                        <span class="filter-count">4</span>
+                    </button>
+                    <button class="filter-pill" data-filter="fullstack">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>Full Stack & MERN</span>
+                        <span class="filter-count">3</span>
+                    </button>
+                    <button class="filter-pill" data-filter="genai">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>GenAI Powered</span>
+                        <span class="filter-count">2</span>
+                    </button>
+                </div>
+
                 <div class="projects-container">
-                    <!-- Project Card 1: Ohmni Study AI (Flagship / Best Project) -->
-                    <div class="project-showcase-card ai-glow">
+                    <!-- Project Card 1: Ohmni Study AI (Flagship / Best Project - MERN + GenAI) -->
+                    <div class="project-showcase-card ai-glow" data-category="fullstack genai">
                         <div class="mockup-header">
                             <div class="mockup-dots">
                                 <span class="m-dot red"></span>
                                 <span class="m-dot yellow"></span>
                                 <span class="m-dot green"></span>
                             </div>
-                            <div class="mockup-url">
+                            <a href="https://omni-study-ai-lilac.vercel.app/" target="_blank" rel="noopener noreferrer" class="mockup-url" title="Open live preview in new tab">
+                                <span class="url-ping-dot"></span>
                                 <i class="fa-solid fa-lock"></i>
                                 <span>omni-study-ai-lilac.vercel.app</span>
-                            </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square url-ext-icon"></i>
+                            </a>
                             <span class="mockup-badge featured-badge"><i class="fa-solid fa-star"></i> Best Project</span>
                         </div>
 
@@ -461,28 +481,30 @@
                             <div class="project-main-info">
                                 <div class="project-title-row">
                                     <h3 class="project-heading">Ohmni Study AI</h3>
-                                    <span class="category-chip ai-chip">EdTech AI</span>
+                                    <span class="category-chip mern-chip"><i class="fa-solid fa-layer-group"></i> MERN + GenAI</span>
                                 </div>
                                 <p class="project-text">
-                                    An AI study companion built to simplify complex academic subjects. Generates concise topic summaries, flash notes, and clear technical explanations for students.
+                                    A full-stack <strong>MERN EdTech AI application</strong> built to simplify complex academic subjects. Combines a <strong>MongoDB & Express/Node.js</strong> backend with a responsive <strong>React</strong> frontend, integrated with <strong>GenAI</strong> to generate smart concept breakdowns, interactive flashcards, and instant explanations.
                                 </p>
 
                                 <div class="project-feature-list">
                                     <div class="feature-item">
                                         <i class="fa-solid fa-check"></i>
-                                        <span>Instant smart explanations for technical subjects.</span>
+                                        <span>Full-stack architecture built on the MERN stack (MongoDB, Express.js, React.js, Node.js).</span>
                                     </div>
                                     <div class="feature-item">
                                         <i class="fa-solid fa-check"></i>
-                                        <span>Distraction-free, responsive study environment with clean UX.</span>
+                                        <span>Integrated GenAI model for instant topic simplification, summaries, and exam flashcards.</span>
                                     </div>
                                 </div>
 
                                 <div class="tech-stack-row">
-                                    <span class="stack-tag">Next.js</span>
-                                    <span class="stack-tag">React</span>
-                                    <span class="stack-tag">AI API</span>
-                                    <span class="stack-tag">Tailwind CSS</span>
+                                    <span class="stack-tag mern-tag"><i class="fa-solid fa-layer-group"></i> MERN Stack</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-database" style="color: #4ade80;"></i> MongoDB</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-node-js" style="color: #22c55e;"></i> Express & Node</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-react" style="color: #00D8FF;"></i> React.js</span>
+                                    <span class="stack-tag ai-tag"><i class="fa-solid fa-brain" style="color: #c084fc;"></i> GenAI API</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-wind" style="color: #38bdf8;"></i> Tailwind CSS</span>
                                 </div>
                             </div>
 
@@ -499,18 +521,81 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 2: Employee Management System -->
-                    <div class="project-showcase-card">
+                    <!-- Project Card 2: Yt-Gemini Resume & Interview Prep (Google Gemini GenAI) -->
+                    <div class="project-showcase-card ai-glow" data-category="genai">
                         <div class="mockup-header">
                             <div class="mockup-dots">
                                 <span class="m-dot red"></span>
                                 <span class="m-dot yellow"></span>
                                 <span class="m-dot green"></span>
                             </div>
-                            <div class="mockup-url">
+                            <a href="https://yt-genai-project-9hja-akanksha-fd06.vercel.app/" target="_blank" rel="noopener noreferrer" class="mockup-url" title="Open live preview in new tab">
+                                <span class="url-ping-dot"></span>
+                                <i class="fa-solid fa-lock"></i>
+                                <span>yt-genai-project.vercel.app</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square url-ext-icon"></i>
+                            </a>
+                            <span class="mockup-badge ai-badge"><i class="fa-solid fa-sparkles"></i> Google Gemini GenAI</span>
+                        </div>
+
+                        <div class="project-body">
+                            <div class="project-main-info">
+                                <div class="project-title-row">
+                                    <h3 class="project-heading">Yt-Gemini Resume & Interview Prep</h3>
+                                    <span class="category-chip gemini-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> GenAI Tool</span>
+                                </div>
+                                <p class="project-text">
+                                    A Generative AI-powered career accelerator built with the <strong>Google Gemini API</strong>. Automatically critiques technical resumes against ATS filters, analyzes keyword density, and generates role-specific interview simulations with real-time feedback.
+                                </p>
+
+                                <div class="project-feature-list">
+                                    <div class="feature-item">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>Google Gemini GenAI powers intelligent resume ATS scoring and keyword analysis.</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>Interactive AI mock interview prep simulation tailored to target job descriptions.</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-stack-row">
+                                    <span class="stack-tag gemini-tag"><i class="fa-solid fa-sparkles" style="color: #60a5fa;"></i> Google Gemini API</span>
+                                    <span class="stack-tag ai-tag"><i class="fa-solid fa-brain" style="color: #c084fc;"></i> Generative AI</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-react" style="color: #00D8FF;"></i> React.js</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-node-js" style="color: #22c55e;"></i> Node.js</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-wind" style="color: #38bdf8;"></i> Tailwind CSS</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-cloud-arrow-up" style="color: #ffffff;"></i> Vercel</span>
+                                </div>
+                            </div>
+
+                            <div class="project-cta-row">
+                                <a href="https://yt-genai-project-9hja-akanksha-fd06.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glow">
+                                    <span>Live Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://github.com/akankshama97" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Employee Management System (Full Stack MERN / Next.js) -->
+                    <div class="project-showcase-card" data-category="fullstack">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span class="m-dot red"></span>
+                                <span class="m-dot yellow"></span>
+                                <span class="m-dot green"></span>
+                            </div>
+                            <a href="https://ems-project-six-mu.vercel.app/" target="_blank" rel="noopener noreferrer" class="mockup-url" title="Open live preview in new tab">
+                                <span class="url-ping-dot"></span>
                                 <i class="fa-solid fa-lock"></i>
                                 <span>ems-project-six-mu.vercel.app</span>
-                            </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square url-ext-icon"></i>
+                            </a>
                             <span class="mockup-badge">Full Stack</span>
                         </div>
 
@@ -536,10 +621,10 @@
                                 </div>
 
                                 <div class="tech-stack-row">
-                                    <span class="stack-tag">React</span>
-                                    <span class="stack-tag">Next.js</span>
-                                    <span class="stack-tag">Tailwind CSS</span>
-                                    <span class="stack-tag">Node.js</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-react" style="color: #00D8FF;"></i> React.js</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-n" style="color: #ffffff;"></i> Next.js</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-node-js" style="color: #22c55e;"></i> Node.js</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-wind" style="color: #38bdf8;"></i> Tailwind CSS</span>
                                 </div>
                             </div>
 
@@ -556,65 +641,8 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3: Yt-Gemini Resume & Interview Prep -->
-                    <div class="project-showcase-card ai-glow">
-                        <div class="mockup-header">
-                            <div class="mockup-dots">
-                                <span class="m-dot red"></span>
-                                <span class="m-dot yellow"></span>
-                                <span class="m-dot green"></span>
-                            </div>
-                            <div class="mockup-url">
-                                <i class="fa-solid fa-lock"></i>
-                                <span>yt-genai-project.vercel.app</span>
-                            </div>
-                            <span class="mockup-badge ai-badge"><i class="fa-solid fa-sparkles"></i> AI Career Tool</span>
-                        </div>
-
-                        <div class="project-body">
-                            <div class="project-main-info">
-                                <div class="project-title-row">
-                                    <h3 class="project-heading">Yt-Gemini Resume & Interview Prep</h3>
-                                    <span class="category-chip ai-chip">Career Tech</span>
-                                </div>
-                                <p class="project-text">
-                                    A career preparation utility that analyzes resumes for ATS keyword matches and provides customized interview questions based on job descriptions.
-                                </p>
-
-                                <div class="project-feature-list">
-                                    <div class="feature-item">
-                                        <i class="fa-solid fa-check"></i>
-                                        <span>Resume optimization and keyword suggestions.</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fa-solid fa-check"></i>
-                                        <span>Interactive AI interview question coaching and feedback.</span>
-                                    </div>
-                                </div>
-
-                                <div class="tech-stack-row">
-                                    <span class="stack-tag">Gemini API</span>
-                                    <span class="stack-tag">React</span>
-                                    <span class="stack-tag">Tailwind CSS</span>
-                                    <span class="stack-tag">Vercel</span>
-                                </div>
-                            </div>
-
-                            <div class="project-cta-row">
-                                <a href="https://yt-genai-project-9hja-akanksha-fd06.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glow">
-                                    <span>Live Preview</span>
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                                <a href="https://github.com/akankshama97" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
-                                    <i class="fa-brands fa-github"></i>
-                                    <span>Source Code</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Project Card 4: Airbnb Full Stack Clone (In Active Build) -->
-                    <div class="project-showcase-card">
+                    <div class="project-showcase-card" data-category="fullstack">
                         <div class="mockup-header">
                             <div class="mockup-dots">
                                 <span class="m-dot red"></span>
@@ -622,6 +650,7 @@
                                 <span class="m-dot green"></span>
                             </div>
                             <div class="mockup-url">
+                                <span class="url-ping-dot orange"></span>
                                 <i class="fa-solid fa-terminal"></i>
                                 <span>github.com/akankshama97/airbnb-clone</span>
                             </div>
@@ -632,7 +661,7 @@
                             <div class="project-main-info">
                                 <div class="project-title-row">
                                     <h3 class="project-heading">Airbnb Clone with Image Upload</h3>
-                                    <span class="category-chip">Full Stack</span>
+                                    <span class="category-chip">Full Stack MERN</span>
                                 </div>
                                 <p class="project-text">
                                     A full-stack rental marketplace application with property listings, multi-image upload pipeline, search filters, and user authentication.
@@ -650,10 +679,11 @@
                                 </div>
 
                                 <div class="tech-stack-row">
-                                    <span class="stack-tag">MERN Stack</span>
-                                    <span class="stack-tag">Next.js</span>
-                                    <span class="stack-tag">MongoDB</span>
-                                    <span class="stack-tag">Tailwind CSS</span>
+                                    <span class="stack-tag mern-tag"><i class="fa-solid fa-layer-group"></i> MERN Stack</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-database" style="color: #4ade80;"></i> MongoDB</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-node-js" style="color: #22c55e;"></i> Express.js</span>
+                                    <span class="stack-tag"><i class="fa-brands fa-react" style="color: #00D8FF;"></i> React.js</span>
+                                    <span class="stack-tag"><i class="fa-solid fa-wind" style="color: #38bdf8;"></i> Tailwind CSS</span>
                                 </div>
                             </div>
 
@@ -843,7 +873,7 @@
                                 <h3>GitHub</h3>
                                 <span class="hub-handle">@akankshama97</span>
                             </div>
-                            <span class="hub-stat-chip">10+ Repos</span>
+                            <span class="hub-stat-chip">15+ Repositories</span>
                         </div>
                         <p class="hub-desc">Code repository hub for my full-stack web applications, React & Next.js systems, and active project builds.</p>
                         <div class="hub-footer">
