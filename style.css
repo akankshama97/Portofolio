@@ -3189,11 +3189,14 @@ a.mockup-url:hover .url-ext-icon {
 
 @media (max-width: 480px) {
     .logo-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .logo-tag {
-        display: none;
+        display: inline-block;
+        font-size: 0.6rem;
+        padding: 0.1rem 0.4rem;
+        margin-left: 0.25rem;
     }
 
     .hero-actions .btn {
