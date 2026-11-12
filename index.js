@@ -19,14 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Check saved theme in localStorage or system preference
+    // Check saved theme in localStorage or default to warm light theme
     const savedTheme = localStorage.getItem('portfolio-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (savedTheme) {
         htmlElement.setAttribute('data-theme', savedTheme);
     } else {
-        htmlElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        htmlElement.setAttribute('data-theme', 'light');
     }
 
     if (themeToggleBtn) {
@@ -176,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showToast(message, isError = false) {
         if (!toast) return;
         toast.textContent = message;
-        toast.style.background = isError ? '#ef4444' : '#10b981';
+        toast.style.background = isError ? '#DC2626' : '#1C1917';
         toast.classList.add('show');
 
         clearTimeout(toastTimeout);
