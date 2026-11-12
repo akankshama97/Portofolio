@@ -244,22 +244,23 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-sm);
 }
 
-/* Primary Button: Vibrant Emerald Gradient + Crisp White Text */
+/* Primary Button: Solid Green #22c55e */
 .btn-glow {
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
-    color: #FFFFFF !important;
-    border: 1px solid #10B981 !important;
-    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.32);
+    background: #22c55e !important;
+    color: #050a1a !important;
+    font-weight: 700;
+    border: 1px solid #22c55e !important;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
     position: relative;
     overflow: hidden;
 }
 
 .btn-glow:hover {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
-    border-color: #059669 !important;
+    background: #16a34a !important;
+    border-color: #16a34a !important;
     color: #FFFFFF !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 26px rgba(16, 185, 129, 0.48);
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
 }
 
 /* Secondary Button: Frosted Dark Slate Glass */
@@ -1346,15 +1347,27 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.5px;
     padding: 0.2rem 0.65rem;
     border-radius: var(--radius-full);
-    background: var(--accent-subtle);
-    color: #34D399;
-    border: 1px solid var(--accent-border);
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.28);
+}
+
+.mockup-badge.featured-badge {
+    background: rgba(245, 158, 11, 0.15);
+    color: #FBBF24;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.mockup-badge.building-badge {
+    background: rgba(6, 182, 212, 0.14);
+    color: #22D3EE;
+    border: 1px solid rgba(6, 182, 212, 0.32);
 }
 
 .mockup-badge.ai-badge {
-    background: var(--accent-subtle);
-    color: #34D399;
-    border: 1px solid var(--accent-border);
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.28);
 }
 
 .project-body {
@@ -2047,6 +2060,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.82rem;
     color: var(--text-muted);
     font-family: var(--font-code);
+}
+
+.hub-stat-chip {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
 }
 
 .hub-desc {
