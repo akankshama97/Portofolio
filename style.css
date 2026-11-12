@@ -2868,13 +2868,29 @@ a.mockup-url:hover .url-ext-icon {
 }
 
 .footer-brand {
-    max-width: 360px;
+    max-width: 380px;
+}
+
+.footer-brand-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--text-heading);
+    text-decoration: none;
+    letter-spacing: -0.4px;
+    display: inline-block;
+    transition: color var(--transition);
+}
+
+.footer-brand-title:hover {
+    color: #22c55e;
 }
 
 .footer-brand p {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-top: 0.5rem;
+    line-height: 1.6;
 }
 
 .footer-nav {
