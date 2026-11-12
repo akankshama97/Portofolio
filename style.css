@@ -398,6 +398,35 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-heading);
 }
 
+.logo-avatar-wrap {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.logo-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 2px solid var(--primary);
+    box-shadow: 0 1px 3px rgba(28, 25, 23, 0.08);
+    display: block;
+}
+
+.logo-status-dot {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    background-color: #16A34A;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+}
+
 .logo-icon {
     width: 36px;
     height: 36px;
@@ -690,19 +719,19 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-hover);
 }
 
-/* Clean, Minimal Avatar Ring (No gradient, no neon glow) */
+/* Clean, Minimal Avatar Ring & Portrait Image */
 .avatar-ring {
-    width: 88px;
-    height: 88px;
+    width: 104px;
+    height: 104px;
     border-radius: 50%;
     margin: 0 auto 1.2rem;
     padding: 3px;
-    background: transparent;
+    background: #FFFFFF;
     border: 2px solid var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: none;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.15);
 }
 
 .avatar-inner {
@@ -713,6 +742,16 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 50%;
+    display: block;
 }
 
 .avatar-initials {
