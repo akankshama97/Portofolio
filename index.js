@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 2. Permanent Warm Theme Lock (No light/dark switcher)
+    // 2. Permanent Modern Dark Slate Theme Lock
     // -------------------------------------------------------------
     const htmlElement = document.documentElement;
-    htmlElement.setAttribute('data-theme', 'light');
+    htmlElement.setAttribute('data-theme', 'dark');
     try {
         localStorage.removeItem('portfolio-theme');
     } catch (e) {
@@ -266,10 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const particles = [];
         const colors = [
-            'rgba(234, 88, 12, ',   // Burnt Orange
-            'rgba(245, 158, 11, ',  // Amber
-            'rgba(251, 146, 60, ',  // Warm Peach
-            'rgba(194, 65, 12, '    // Deep Terracotta
+            'rgba(16, 185, 129, ',   // Emerald Tech
+            'rgba(6, 182, 212, ',    // Cyan
+            'rgba(52, 211, 153, ',   // Mint
+            'rgba(56, 189, 248, '    // Sky Blue
         ];
 
         const mouse = {
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(234, 88, 12, ${lineAlpha})`;
+                        ctx.strokeStyle = `rgba(16, 185, 129, ${lineAlpha})`;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = `rgba(234, 88, 12, ${mAlpha})`;
+                        ctx.strokeStyle = `rgba(52, 211, 153, ${mAlpha})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
