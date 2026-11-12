@@ -249,4 +249,174 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     });
+
+    // -------------------------------------------------------------
+    // 11. Interactive Constellation Canvas Background
+    // -------------------------------------------------------------
+    const canvas = document.getElementById('interactive-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 22 : 48;
+        const maxDistance = isMobile ? 85 : 125;
+        const mouseRadius = isMobile ? 90 : 150;
+
+        const particles = [];
+        const colors = [
+            'rgba(234, 88, 12, ',   // Burnt Orange
+            'rgba(245, 158, 11, ',  // Amber
+            'rgba(251, 146, 60, ',  // Warm Peach
+            'rgba(194, 65, 12, '    // Deep Terracotta
+        ];
+
+        const mouse = {
+            x: -1000,
+            y: -1000,
+            isActive: false
+        };
+
+        class Particle {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(initial = false) {
+                this.x = Math.random() * width;
+                this.y = initial ? Math.random() * height : height + 10;
+                this.radius = Math.random() * 2 + 1.2;
+                this.vx = (Math.random() - 0.5) * 0.45;
+                this.vy = -Math.random() * 0.55 - 0.25; // Slow upward drift
+                this.baseColor = colors[Math.floor(Math.random() * colors.length)];
+                this.alpha = Math.random() * 0.38 + 0.22;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Mouse interaction (gentle repulsion / attraction)
+                if (mouse.isActive) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const dist = Math.hypot(dx, dy);
+
+                    if (dist < mouseRadius) {
+                        const force = (1 - dist / mouseRadius) * 1.4;
+                        this.x -= (dx / dist) * force;
+                        this.y -= (dy / dist) * force;
+                    }
+                }
+
+                // Wrap or reset
+                if (this.y < -10) this.reset();
+                if (this.x < -10) this.x = width + 10;
+                if (this.x > width + 10) this.x = -10;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.baseColor + this.alpha + ')';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.hypot(dx, dy);
+
+                    if (dist < maxDistance) {
+                        const lineAlpha = (1 - dist / maxDistance) * 0.16;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(234, 88, 12, ${lineAlpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+
+                // Connect to mouse cursor
+                if (mouse.isActive) {
+                    const mdx = particles[i].x - mouse.x;
+                    const mdy = particles[i].y - mouse.y;
+                    const mdist = Math.hypot(mdx, mdy);
+                    if (mdist < mouseRadius) {
+                        const mAlpha = (1 - mdist / mouseRadius) * 0.24;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(234, 88, 12, ${mAlpha})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        let animationFrameId;
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            drawLines();
+            animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Track mouse / touch
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            mouse.isActive = true;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.isActive = false;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+                mouse.isActive = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            mouse.isActive = false;
+        });
+
+        // Resize handler with debounce
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }, 150);
+        });
+
+        // Pause animation when tab is inactive to save battery
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                cancelAnimationFrame(animationFrameId);
+            } else {
+                animationFrameId = requestAnimationFrame(animate);
+            }
+        });
+    }
 });

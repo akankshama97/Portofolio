@@ -123,7 +123,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   Warm Subtle Animated Background (Peach / Light Orange Blobs & Micro-particles)
+   Warm Interactive Background (Constellation Canvas & Sunset Aura Blobs)
    -------------------------------------------------------------------------- */
 .ambient-bg {
     position: fixed;
@@ -136,112 +136,85 @@ body {
     overflow: hidden;
 }
 
-/* Soft, Slow-moving Blurred Blobs in Light Peach (#FED7AA, #FFEDD5) */
+#interactive-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Rich Warm Aura Blobs (#FED7AA, #FFEDD5, #FDBA74, #FEF3C7) */
 .ambient-blob {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    filter: blur(95px);
-    -webkit-filter: blur(95px);
+    filter: blur(100px);
+    -webkit-filter: blur(100px);
     will-change: transform;
+    z-index: 0;
 }
 
 .blob-1 {
-    top: -8%;
-    left: -6%;
-    width: 520px;
-    height: 520px;
-    background: #FED7AA;
-    opacity: 0.38;
-    animation: driftBlobOne 28s ease-in-out infinite alternate;
+    top: -12%;
+    left: -10%;
+    width: 620px;
+    height: 620px;
+    background: radial-gradient(circle, rgba(254, 215, 170, 0.8) 0%, rgba(254, 215, 170, 0) 70%);
+    animation: driftBlobOne 24s ease-in-out infinite alternate;
 }
 
 .blob-2 {
-    top: 36%;
-    right: -10%;
-    width: 580px;
-    height: 580px;
-    background: #FFEDD5;
-    opacity: 0.42;
-    animation: driftBlobTwo 34s ease-in-out infinite alternate;
+    top: 28%;
+    right: -12%;
+    width: 660px;
+    height: 660px;
+    background: radial-gradient(circle, rgba(255, 237, 213, 0.9) 0%, rgba(255, 237, 213, 0) 70%);
+    animation: driftBlobTwo 30s ease-in-out infinite alternate;
 }
 
 .blob-3 {
-    bottom: -8%;
-    left: 22%;
-    width: 480px;
-    height: 480px;
-    background: #FED7AA;
-    opacity: 0.32;
-    animation: driftBlobThree 30s ease-in-out infinite alternate;
+    bottom: -10%;
+    left: 12%;
+    width: 580px;
+    height: 580px;
+    background: radial-gradient(circle, rgba(253, 186, 116, 0.65) 0%, rgba(253, 186, 116, 0) 70%);
+    animation: driftBlobThree 26s ease-in-out infinite alternate;
+}
+
+.blob-4 {
+    top: 68%;
+    right: 22%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(254, 243, 199, 0.75) 0%, rgba(254, 243, 199, 0) 70%);
+    animation: driftBlobFour 28s ease-in-out infinite alternate;
 }
 
 @keyframes driftBlobOne {
     0% { transform: translate3d(0, 0, 0) scale(1); }
-    50% { transform: translate3d(60px, 45px, 0) scale(1.08); }
-    100% { transform: translate3d(-35px, 75px, 0) scale(0.94); }
+    50% { transform: translate3d(70px, 50px, 0) scale(1.1); }
+    100% { transform: translate3d(-40px, 80px, 0) scale(0.94); }
 }
 
 @keyframes driftBlobTwo {
     0% { transform: translate3d(0, 0, 0) scale(1); }
-    50% { transform: translate3d(-70px, -55px, 0) scale(1.1); }
-    100% { transform: translate3d(-40px, 45px, 0) scale(0.92); }
+    50% { transform: translate3d(-80px, -60px, 0) scale(1.12); }
+    100% { transform: translate3d(-45px, 50px, 0) scale(0.92); }
 }
 
 @keyframes driftBlobThree {
     0% { transform: translate3d(0, 0, 0) scale(1); }
-    50% { transform: translate3d(-55px, -40px, 0) scale(1.06); }
-    100% { transform: translate3d(45px, -65px, 0) scale(0.95); }
+    50% { transform: translate3d(-60px, -45px, 0) scale(1.08); }
+    100% { transform: translate3d(50px, -70px, 0) scale(0.95); }
 }
 
-/* Tiny Floating Dots / Particles Moving Slowly Upwards */
-.particles-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.particle {
-    position: absolute;
-    bottom: -20px;
-    border-radius: 50%;
-    background-color: var(--primary);
-    pointer-events: none;
-    will-change: transform, opacity;
-    animation: floatParticleUp linear infinite;
-}
-
-.p-1  { left: 7%;  width: 3px;   height: 3px;   opacity: 0.22; animation-duration: 26s; animation-delay: -5s; }
-.p-2  { left: 16%; width: 4px;   height: 4px;   opacity: 0.16; animation-duration: 33s; animation-delay: -14s; }
-.p-3  { left: 27%; width: 2.5px; height: 2.5px; opacity: 0.24; animation-duration: 29s; animation-delay: -9s; }
-.p-4  { left: 39%; width: 3.5px; height: 3.5px; opacity: 0.18; animation-duration: 36s; animation-delay: -22s; }
-.p-5  { left: 51%; width: 3px;   height: 3px;   opacity: 0.22; animation-duration: 27s; animation-delay: -3s; }
-.p-6  { left: 63%; width: 4.5px; height: 4.5px; opacity: 0.14; animation-duration: 35s; animation-delay: -18s; }
-.p-7  { left: 73%; width: 3px;   height: 3px;   opacity: 0.20; animation-duration: 30s; animation-delay: -11s; }
-.p-8  { left: 84%; width: 2.5px; height: 2.5px; opacity: 0.25; animation-duration: 31s; animation-delay: -25s; }
-.p-9  { left: 93%; width: 3.5px; height: 3.5px; opacity: 0.17; animation-duration: 37s; animation-delay: -7s; }
-.p-10 { left: 12%; width: 3px;   height: 3px;   opacity: 0.19; animation-duration: 31s; animation-delay: -19s; }
-.p-11 { left: 47%; width: 2.5px; height: 2.5px; opacity: 0.23; animation-duration: 27s; animation-delay: -13s; }
-.p-12 { left: 80%; width: 4px;   height: 4px;   opacity: 0.15; animation-duration: 34s; animation-delay: -2s; }
-
-@keyframes floatParticleUp {
-    0% {
-        transform: translate3d(0, 0, 0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.22;
-    }
-    85% {
-        opacity: 0.22;
-    }
-    100% {
-        transform: translate3d(28px, -112vh, 0);
-        opacity: 0;
-    }
+@keyframes driftBlobFour {
+    0% { transform: translate3d(0, 0, 0) scale(0.95); }
+    50% { transform: translate3d(50px, -55px, 0) scale(1.1); }
+    100% { transform: translate3d(-35px, 35px, 0) scale(1); }
 }
 
 /* Scroll Progress Bar - Clean Solid Accent */
@@ -275,13 +248,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.25;
 }
 
-/* Converted from AI multi-color gradient shimmer to clean solid highlight */
+/* Warm Sunset Gradient Accent Text (Human Designer Signature) */
 .shimmer-text {
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: var(--primary) !important;
-    color: var(--primary) !important;
-    animation: none !important;
+    background: linear-gradient(135deg, #EA580C 0%, #D97706 45%, #C2410C 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
     font-weight: 800;
 }
 
@@ -311,22 +283,22 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-sm);
 }
 
-/* Primary Button: Solid Burnt Orange Accent + White Text (No glow, subtle elevation) */
+/* Primary Button: Warm Sunset Gradient Accent + White Text */
 .btn-glow {
-    background: var(--primary) !important;
+    background: linear-gradient(135deg, #EA580C 0%, #F97316 100%) !important;
     color: #FFFFFF !important;
-    border-color: var(--primary) !important;
-    box-shadow: var(--shadow-btn);
+    border-color: #EA580C !important;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.28);
     position: relative;
     overflow: hidden;
 }
 
 .btn-glow:hover {
-    background: var(--primary-hover) !important;
-    border-color: var(--primary-hover) !important;
+    background: linear-gradient(135deg, #C2410C 0%, #EA580C 100%) !important;
+    border-color: #C2410C !important;
     color: #FFFFFF !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.38);
 }
 
 /* Secondary Button: Solid Card Background + Crisp Text + Subtle Border */
@@ -721,17 +693,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Clean, Minimal Avatar Ring & Portrait Image */
 .avatar-ring {
-    width: 104px;
-    height: 104px;
+    position: relative;
+    width: 108px;
+    height: 108px;
     border-radius: 50%;
     margin: 0 auto 1.2rem;
-    padding: 3px;
-    background: #FFFFFF;
-    border: 2px solid var(--primary);
+    padding: 3.5px;
+    background: linear-gradient(135deg, #EA580C 0%, #F59E0B 50%, #FB923C 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.15);
+    box-shadow: 0 4px 18px rgba(234, 88, 12, 0.22);
+    transition: transform var(--transition);
+}
+
+.avatar-ring:hover {
+    transform: scale(1.04);
 }
 
 .avatar-inner {
@@ -752,6 +729,24 @@ h1, h2, h3, h4, h5, h6 {
     object-position: center 15%;
     border-radius: 50%;
     display: block;
+}
+
+.avatar-badge-check {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 28px;
+    height: 28px;
+    background: #16A34A;
+    color: #FFFFFF;
+    border-radius: 50%;
+    border: 2.5px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 4;
 }
 
 .avatar-initials {
@@ -2418,6 +2413,7 @@ h1, h2, h3, h4, h5, h6 {
     .blob-1 { width: 320px; height: 320px; }
     .blob-2 { width: 360px; height: 360px; }
     .blob-3 { width: 300px; height: 300px; }
+    .blob-4 { width: 280px; height: 280px; }
 
     .section {
         padding: 2.8rem 0;
