@@ -464,4 +464,35 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
+    // -------------------------------------------------------------
+    // 13. Certificate Lightbox Modal Handling
+    // -------------------------------------------------------------
+    const certModal = document.getElementById('cert-modal');
+    const certModalImg = document.getElementById('cert-modal-img');
+    const certModalTitle = document.getElementById('cert-modal-title');
+
+    window.openCertModal = function(src, title) {
+        if (!certModal || !certModalImg) return;
+        certModalImg.src = src;
+        if (certModalTitle) {
+            certModalTitle.textContent = title || 'Certificate Preview';
+        }
+        certModal.classList.add('open');
+        certModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeCertModal = function() {
+        if (!certModal) return;
+        certModal.classList.remove('open');
+        certModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certModal && certModal.classList.contains('open')) {
+            window.closeCertModal();
+        }
+    });
 });
