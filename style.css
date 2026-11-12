@@ -634,22 +634,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-bento-card {
-    background: rgba(10, 19, 41, 0.85);
+    background: rgba(10, 19, 41, 0.88);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 18px;
     box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(34, 197, 94, 0.12);
     width: 100%;
     max-width: 440px;
     overflow: hidden;
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-bento-card:hover {
-    border-color: rgba(34, 197, 94, 0.35);
-    transform: translateY(-4px);
-    box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.8), 0 0 24px rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 28px 64px -12px rgba(0, 0, 0, 0.85), 0 0 28px rgba(34, 197, 94, 0.22);
 }
 
 /* Window Chrome Header */
@@ -735,6 +735,14 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 18px rgba(34, 197, 94, 0.25);
     overflow: hidden;
     background: #050a1a;
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.bento-avatar-frame:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 24px rgba(34, 197, 94, 0.45);
+    border-color: #4ade80;
 }
 
 .bento-avatar-img {
@@ -781,6 +789,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.18rem 0.55rem;
     border-radius: 6px;
     margin-bottom: 0.35rem;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+.bento-terminal-role:hover {
+    background: rgba(34, 197, 94, 0.16);
+    border-color: rgba(34, 197, 94, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.2);
 }
 
 .term-prompt {
@@ -819,25 +836,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-metric-card {
-    background: rgba(5, 10, 26, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    padding: 0.75rem 0.85rem;
+    background: rgba(5, 10, 26, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.85rem 0.95rem;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    transition: border-color var(--transition), background var(--transition);
+    gap: 0.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
 }
 
 .stat-metric-card:hover {
-    border-color: rgba(34, 197, 94, 0.35);
-    background: rgba(34, 197, 94, 0.04);
+    border-color: rgba(34, 197, 94, 0.65);
+    background: rgba(34, 197, 94, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.6), 0 0 18px rgba(34, 197, 94, 0.22);
 }
 
 .metric-top {
     display: flex;
     align-items: center;
     gap: 0.45rem;
+}
+
+.metric-link-icon {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    opacity: 0.55;
+    transition: all 0.25s ease;
+}
+
+.stat-metric-card:hover .metric-link-icon {
+    color: #22c55e;
+    opacity: 1;
+    transform: translate(2px, -2px);
 }
 
 .metric-num {
@@ -861,12 +898,21 @@ h1, h2, h3, h4, h5, h6 {
 /* Small Box: Currently Building */
 .currently-building-box {
     background: rgba(34, 197, 94, 0.08);
-    border: 1px solid rgba(34, 197, 94, 0.24);
-    border-radius: 10px;
-    padding: 0.72rem 0.9rem;
+    border: 1px solid rgba(34, 197, 94, 0.26);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.currently-building-box:hover {
+    border-color: rgba(34, 197, 94, 0.6);
+    background: rgba(34, 197, 94, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), 0 0 18px rgba(34, 197, 94, 0.18);
 }
 
 .building-badge {
@@ -902,29 +948,32 @@ h1, h2, h3, h4, h5, h6 {
 .bento-tech-footer {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: 0.5rem;
     padding-top: 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .bento-pill {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.76rem;
     font-weight: 500;
     color: #E2E8F0;
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    transition: all var(--transition);
+    gap: 0.4rem;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
 }
 
 .bento-pill:hover {
-    border-color: rgba(34, 197, 94, 0.4);
-    background: rgba(34, 197, 94, 0.08);
-    transform: translateY(-1px);
+    border-color: rgba(34, 197, 94, 0.55);
+    background: rgba(34, 197, 94, 0.14);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
 }
 
 /* --------------------------------------------------------------------------
@@ -2949,6 +2998,40 @@ a.mockup-url:hover .url-ext-icon {
     color: var(--text-muted);
 }
 
+.footer-copy-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.footer-copy-text {
+    margin: 0;
+}
+
+.footer-motto-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    letter-spacing: 0.25px;
+    transition: all 0.25s ease;
+}
+
+.footer-motto-pill:hover {
+    background: rgba(34, 197, 94, 0.18);
+    border-color: rgba(34, 197, 94, 0.55);
+    color: #FFFFFF;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+    transform: translateY(-1px);
+}
+
 /* --------------------------------------------------------------------------
    Floating Back To Top & Toast
    -------------------------------------------------------------------------- */
@@ -3185,6 +3268,11 @@ a.mockup-url:hover .url-ext-icon {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+        gap: 0.75rem;
+    }
+
+    .footer-copy-wrap {
+        justify-content: center;
     }
 
     /* Certificates Responsive */
