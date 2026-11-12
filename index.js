@@ -14,27 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 2. Dark / Light Theme Toggle with LocalStorage
+    // 2. Permanent Warm Theme Lock (No light/dark switcher)
     // -------------------------------------------------------------
-    const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
-
-    // Check saved theme in localStorage or default to warm light theme
-    const savedTheme = localStorage.getItem('portfolio-theme');
-
-    if (savedTheme) {
-        htmlElement.setAttribute('data-theme', savedTheme);
-    } else {
-        htmlElement.setAttribute('data-theme', 'light');
-    }
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('portfolio-theme', newTheme);
-        });
+    htmlElement.setAttribute('data-theme', 'light');
+    try {
+        localStorage.removeItem('portfolio-theme');
+    } catch (e) {
+        // Storage access fallback
     }
 
     // -------------------------------------------------------------

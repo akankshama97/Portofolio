@@ -122,12 +122,126 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* Ambient Floating Lights - Completely removed for clean human look */
-.ambient-glow,
-.glow-1,
-.glow-2,
-.glow-3 {
-    display: none !important;
+/* --------------------------------------------------------------------------
+   Warm Subtle Animated Background (Peach / Light Orange Blobs & Micro-particles)
+   -------------------------------------------------------------------------- */
+.ambient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Soft, Slow-moving Blurred Blobs in Light Peach (#FED7AA, #FFEDD5) */
+.ambient-blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(95px);
+    -webkit-filter: blur(95px);
+    will-change: transform;
+}
+
+.blob-1 {
+    top: -8%;
+    left: -6%;
+    width: 520px;
+    height: 520px;
+    background: #FED7AA;
+    opacity: 0.38;
+    animation: driftBlobOne 28s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+    top: 36%;
+    right: -10%;
+    width: 580px;
+    height: 580px;
+    background: #FFEDD5;
+    opacity: 0.42;
+    animation: driftBlobTwo 34s ease-in-out infinite alternate;
+}
+
+.blob-3 {
+    bottom: -8%;
+    left: 22%;
+    width: 480px;
+    height: 480px;
+    background: #FED7AA;
+    opacity: 0.32;
+    animation: driftBlobThree 30s ease-in-out infinite alternate;
+}
+
+@keyframes driftBlobOne {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(60px, 45px, 0) scale(1.08); }
+    100% { transform: translate3d(-35px, 75px, 0) scale(0.94); }
+}
+
+@keyframes driftBlobTwo {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-70px, -55px, 0) scale(1.1); }
+    100% { transform: translate3d(-40px, 45px, 0) scale(0.92); }
+}
+
+@keyframes driftBlobThree {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-55px, -40px, 0) scale(1.06); }
+    100% { transform: translate3d(45px, -65px, 0) scale(0.95); }
+}
+
+/* Tiny Floating Dots / Particles Moving Slowly Upwards */
+.particles-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    bottom: -20px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    pointer-events: none;
+    will-change: transform, opacity;
+    animation: floatParticleUp linear infinite;
+}
+
+.p-1  { left: 7%;  width: 3px;   height: 3px;   opacity: 0.22; animation-duration: 26s; animation-delay: -5s; }
+.p-2  { left: 16%; width: 4px;   height: 4px;   opacity: 0.16; animation-duration: 33s; animation-delay: -14s; }
+.p-3  { left: 27%; width: 2.5px; height: 2.5px; opacity: 0.24; animation-duration: 29s; animation-delay: -9s; }
+.p-4  { left: 39%; width: 3.5px; height: 3.5px; opacity: 0.18; animation-duration: 36s; animation-delay: -22s; }
+.p-5  { left: 51%; width: 3px;   height: 3px;   opacity: 0.22; animation-duration: 27s; animation-delay: -3s; }
+.p-6  { left: 63%; width: 4.5px; height: 4.5px; opacity: 0.14; animation-duration: 35s; animation-delay: -18s; }
+.p-7  { left: 73%; width: 3px;   height: 3px;   opacity: 0.20; animation-duration: 30s; animation-delay: -11s; }
+.p-8  { left: 84%; width: 2.5px; height: 2.5px; opacity: 0.25; animation-duration: 31s; animation-delay: -25s; }
+.p-9  { left: 93%; width: 3.5px; height: 3.5px; opacity: 0.17; animation-duration: 37s; animation-delay: -7s; }
+.p-10 { left: 12%; width: 3px;   height: 3px;   opacity: 0.19; animation-duration: 31s; animation-delay: -19s; }
+.p-11 { left: 47%; width: 2.5px; height: 2.5px; opacity: 0.23; animation-duration: 27s; animation-delay: -13s; }
+.p-12 { left: 80%; width: 4px;   height: 4px;   opacity: 0.15; animation-duration: 34s; animation-delay: -2s; }
+
+@keyframes floatParticleUp {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.22;
+    }
+    85% {
+        opacity: 0.22;
+    }
+    100% {
+        transform: translate3d(28px, -112vh, 0);
+        opacity: 0;
+    }
 }
 
 /* Scroll Progress Bar - Clean Solid Accent */
@@ -2258,6 +2372,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+    .ambient-blob {
+        filter: blur(65px);
+        -webkit-filter: blur(65px);
+    }
+    .blob-1 { width: 320px; height: 320px; }
+    .blob-2 { width: 360px; height: 360px; }
+    .blob-3 { width: 300px; height: 300px; }
+
     .section {
         padding: 2.8rem 0;
     }
