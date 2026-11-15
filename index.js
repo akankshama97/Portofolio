@@ -162,7 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function showToast(message, isError = false) {
         if (!toast) return;
         toast.textContent = message;
-        toast.style.background = isError ? '#DC2626' : '#1C1917';
+        toast.style.background = isError ? '#DC2626' : '#00C853';
+        toast.style.color = isError ? '#FFFFFF' : '#0F0F0F';
         toast.classList.add('show');
 
         clearTimeout(toastTimeout);
@@ -255,10 +256,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const particles = [];
         const colors = [
-            'rgba(16, 185, 129, ',   // Emerald Tech
-            'rgba(6, 182, 212, ',    // Cyan
-            'rgba(52, 211, 153, ',   // Mint
-            'rgba(56, 189, 248, '    // Sky Blue
+            'rgba(0, 200, 83, ',    // Accent Green #00C853
+            'rgba(0, 200, 83, ',
+            'rgba(0, 200, 83, ',
+            'rgba(0, 200, 83, '
         ];
 
         const mouse = {
@@ -329,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(16, 185, 129, ${lineAlpha})`;
+                        ctx.strokeStyle = `rgba(0, 200, 83, ${lineAlpha})`;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
@@ -345,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = `rgba(52, 211, 153, ${mAlpha})`;
+                        ctx.strokeStyle = `rgba(0, 200, 83, ${mAlpha})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
