@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Permanent Modern Dark Slate Theme Lock
     // -------------------------------------------------------------
     const htmlElement = document.documentElement;
-    htmlElement.setAttribute('data-theme', 'dark');
+    htmlElement.setAttribute('data-theme', 'light');
     try {
         localStorage.removeItem('portfolio-theme');
     } catch (e) {
@@ -162,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function showToast(message, isError = false) {
         if (!toast) return;
         toast.textContent = message;
-        toast.style.background = isError ? '#DC2626' : '#00C853';
-        toast.style.color = isError ? '#FFFFFF' : '#0F0F0F';
+        toast.style.background = isError ? '#DC2626' : '#1F4E79';
+        toast.style.color = '#FFFFFF';
         toast.classList.add('show');
 
         clearTimeout(toastTimeout);
@@ -256,10 +256,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const particles = [];
         const colors = [
-            'rgba(0, 200, 83, ',    // Accent Green #00C853
-            'rgba(0, 200, 83, ',
-            'rgba(0, 200, 83, ',
-            'rgba(0, 200, 83, '
+            'rgba(31, 78, 121, ',    // Accent Steel Blue #1F4E79
+            'rgba(31, 78, 121, ',
+            'rgba(31, 78, 121, ',
+            'rgba(31, 78, 121, '
         ];
 
         const mouse = {
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(0, 200, 83, ${lineAlpha})`;
+                        ctx.strokeStyle = `rgba(31, 78, 121, ${lineAlpha})`;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(mouse.x, mouse.y);
-                        ctx.strokeStyle = `rgba(0, 200, 83, ${mAlpha})`;
+                        ctx.strokeStyle = `rgba(31, 78, 121, ${mAlpha})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
