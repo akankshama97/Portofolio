@@ -20,9 +20,9 @@ A modern, high-performance, and responsive portfolio website designed for tech r
      - Class 12th (75%) - S.G.S.I.C. Samodhpur, Jaunpur, Uttar Pradesh (Government School).
      - Class 10th (87% Distinction) - S.G.S.I.C. Samodhpur, Jaunpur, Uttar Pradesh (Government School).
    - **Languages Known Sub-Section**: Hindi, English, Awadhi, Bhojpuri with proficiency meters.
-   - **Leadership & Hackathons**: Core member at Voyager Coding Club, team leader, and successfully organized 2 Hackathons with the team.
+   - **Leadership & Hackathons**: Core member at Voyager Coding Club; hackathons organized with team as a Tech Team Member, and participated as a Team Leader.
    - **Current Location**: Knowledge Park 3, Greater Noida, Uttar Pradesh.
-   - **Featured Projects**: Live preview links, tech stack pills, and GitHub links.
+   - **Featured Projects**: 4 featured deployed web applications (StageUp, OmniStudy AI, Yt-Gemini Resume & Interview Prep, Employee Management System).
    - **Coding Profiles**: Direct links and focus areas for LeetCode, GitHub, and LinkedIn.
    - **Contact Section**: One-click "Copy Email" with toast feedback and interactive message form.
 
