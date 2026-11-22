@@ -22,7 +22,11 @@ A modern, high-performance, and responsive portfolio website designed for tech r
    - **Languages Known Sub-Section**: Hindi, English, Awadhi, Bhojpuri with proficiency meters.
    - **Leadership & Hackathons**: Core member at Voyager Coding Club; hackathons organized with team as a Tech Team Member, and participated as a Team Leader.
    - **Current Location**: Knowledge Park 3, Greater Noida, Uttar Pradesh.
-   - **Featured Projects**: 4 featured deployed web applications (StageUp, OmniStudy AI, Yt-Gemini Resume & Interview Prep, Employee Management System).
+   - **Featured Projects**:
+     1. [StageUp](https://stage-up-drab.vercel.app/) — [Code](https://github.com/akankshama97/stage_up) (Flagship Creator Network & UPI Escrow)
+     2. [OmniStudy AI](https://omni-study-ai-lilac.vercel.app/) — [Code](https://github.com/akankshama97/OmniStudy-AI) (MERN + GenAI Study Tool)
+     3. [Yt-Gemini](https://yt-genai-project-9hja-akanksha-fd06.vercel.app/) — [Code](https://github.com/akankshama97/yt-genai-project) (Google Gemini GenAI Tool)
+     4. [EMS Portal](https://ems-project-six-mu.vercel.app/) — [Code](https://github.com/akankshama97/ems-project) (Full Stack Administration System)
    - **Coding Profiles**: Direct links and focus areas for LeetCode, GitHub, and LinkedIn.
    - **Contact Section**: One-click "Copy Email" with toast feedback and interactive message form.
 
